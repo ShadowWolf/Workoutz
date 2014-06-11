@@ -1,0 +1,37 @@
+﻿<controls:MetroWindow x:Class="Workoutz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"        
+        Title="Workoutz" Height="350" Width="525" FontSize="18" >
+    <Grid>
+        <StackPanel Name="QueryValues" Visibility="{Binding Path=AcceptIntervalWorkout, Converter={StaticResource ResourceKey=boolConverter}}">
+            <Grid>
+                <Label Content="Total Workout Time:" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="300" controls:TextboxHelper.Watermark="MM:SS" Text="{Binding Path=TotalWorkoutTime, Converter={StaticResource ResourceKey=timeSpanConverter}}" />
+            </Grid>
+            <Grid>
+                <Label Content="Interval:" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="300" controls:TextboxHelper.Watermark="Interval in seconds" Text="{Binding Path=Interval, Converter={StaticResource ResourceKey=secondsConverter}}" />
+            </Grid>
+            <Grid>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Start Workout" Width="250" Command="{Binding StartWorkout}" />
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Name="DoWorkout" Visibility="{Binding Path=AcceptIntervalWorkout, Converter={StaticResource ResourceKey=invertedBoolConverter}}">
+            <StackPanel Visibility="{Binding Path=WorkoutFinished, Converter={StaticResource ResourceKey=invertedBoolConverter}}">
+                <Label Content="Workout Active!" />
+                <Grid>
+                    <Label Content="Current Interval Left:" Height="36" FontSize="24" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+                    <Border BorderBrush="{x:Null}" Height="36">
+                        <TextBlock Text="{Binding Path=IntervalLeft, Converter={StaticResource ResourceKey=secondsConverter}}" Height="36" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Label Content="Total Workout Left:" Height="36" FontSize="24" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+                    <TextBlock Text="{Binding Path=TimeLeft, Converter={StaticResource ResourceKey=timeSpanConverter}}" Height="36" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</controls:MetroWindow>
