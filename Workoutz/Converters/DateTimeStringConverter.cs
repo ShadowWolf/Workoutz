@@ -23,7 +23,7 @@ namespace Workoutz.Converters
             if (targetType == typeof(string) && value is TimeSpan)
             {
                 TimeSpan time = (TimeSpan)value;
-                return time.TotalSeconds > 0 ? time.ToString(@"mm\:ss") : null;
+                return time.TotalSeconds > 0 ? ToDisplayString(time) : null;
             }
 
             return string.Empty;
@@ -33,10 +33,49 @@ namespace Workoutz.Converters
         {
             if (targetType == typeof(TimeSpan) && value is string && !string.IsNullOrEmpty(value.ToString()))
             {
-                return TimeSpan.Parse(string.Format("00:{0}", value.ToString()));
+                var parseValue = value.ToString();
+                if (parseValue.StartsWith(":"))
+                {
+                    parseValue = string.Format("0{0}", parseValue);
+                }
+
+                TimeSpan timeSpan;
+                if (TimeSpan.TryParse(string.Format("00:{0}", parseValue), out timeSpan))
+                {
+                    return timeSpan;
+                }
             }
 
-            return TimeSpan.Parse(string.Empty);
+            return TimeSpan.Zero;
+        }
+
+        private string ToDisplayString(TimeSpan ts)
+        {
+            var parts = new List<string>(3);
+            if (ts.Hours > 0)
+            {
+                parts.Add(ts.Hours.ToString());
+            }
+
+            if (ts.Minutes > 0)
+            {
+                parts.Add(ts.Minutes.ToString());
+            }
+            else
+            {
+                parts.Add("0");
+            }
+
+            if (ts.Seconds > 0)
+            {
+                parts.Add(ts.Seconds.ToString());
+            }
+            else
+            {
+                parts.Add("00");
+            }
+
+            return string.Join(":", parts);
         }
     }
 
@@ -47,7 +86,7 @@ namespace Workoutz.Converters
             if (targetType == typeof(string) && value is TimeSpan)
             {
                 TimeSpan time = (TimeSpan)value;
-                return time.TotalSeconds > 0 ? ((TimeSpan)value).ToString(@"ss") : null;
+                return time.TotalSeconds > 0 ? time.TotalSeconds.ToString() : null;
             }
 
             return string.Empty;

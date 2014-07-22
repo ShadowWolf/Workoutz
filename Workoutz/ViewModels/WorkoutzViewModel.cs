@@ -50,7 +50,7 @@ namespace Workoutz.ViewModels
             set { this.RaiseAndSetIfChanged(ref _intervalLeft, value); }
         }
 
-        public bool _workoutFinished;
+        private bool _workoutFinished;
         public bool WorkoutFinished
         {
             get { return _workoutFinished; }
@@ -63,7 +63,19 @@ namespace Workoutz.ViewModels
             private set;
         }
 
-        private TimeSpan _tickInterval = TimeSpan.FromMilliseconds(500);
+        public ReactiveCommand RestartWorkout
+        {
+            get;
+            private set;
+        }
+
+        public ReactiveCommand ExitWorkout
+        {
+            get;
+            private set;
+        }
+
+        private TimeSpan _tickInterval = TimeSpan.FromMilliseconds(10);
         private DispatcherTimer _workoutTimer;
         private AudioManager _audioManager = new AudioManager();
 
@@ -80,6 +92,12 @@ namespace Workoutz.ViewModels
 
             StartWorkout = new ReactiveCommand(enableWorkout);
             StartWorkout.Subscribe(param => OnStartWorkout());
+
+            RestartWorkout = new ReactiveCommand(this.WhenAny(vm => vm.WorkoutFinished, obs => obs.Value));
+            RestartWorkout.Subscribe(param => { AcceptIntervalWorkout = true; WorkoutFinished = false; });
+
+            ExitWorkout = new ReactiveCommand();
+            ExitWorkout.Subscribe(param => App.Current.Shutdown(0));
         }
 
         private static bool ValidateEnableWorkout(TimeSpan workout, TimeSpan interval)
@@ -90,6 +108,7 @@ namespace Workoutz.ViewModels
         private object OnStartWorkout()
         {
             AcceptIntervalWorkout = false;
+            WorkoutFinished = false;
             IntervalLeft = Interval;
             TimeLeft = TotalWorkoutTime;
 
@@ -115,12 +134,12 @@ namespace Workoutz.ViewModels
 
             if (IntervalLeft.TotalMilliseconds <= 0)
             {
-                Task.Run(() => PlayInterval());
+                PlayInterval();
                 IntervalLeft = Interval;
             }
-            else
+            else if (IntervalLeft.TotalMilliseconds % 500 == 0)
             {
-                Task.Run(() => PlayTick());
+                PlayTick();
             }
 
             if (TimeLeft.TotalMilliseconds <= 0)
