@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Directory Id="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Name="release" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="Workoutz.Binaries">
+            <Component Id="cmp5A97CFCF4E674F3819B2427958281C2E" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil9EBFE422FB7F1659B75AB7E994BDCC97" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\MahApps.Metro.dll" />
+            </Component>
+            <Component Id="cmpD16275103B8D39560E3EDDC6A8625DAD" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil87D1C19F7090C7963B83FB052A4A59C4" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\MahApps.Metro.xml" />
+            </Component>
+            <Component Id="cmpCC90130B3EC60F35D1A85307755AB672" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filDA20AAF5D2763D91D06446A803B41A03" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\NAudio.dll" />
+            </Component>
+            <Component Id="cmp4525417A94E209F248B8715F99E6DC91" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil05383AD9265AE565F12AD46B91C600DA" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\NAudio.xml" />
+            </Component>
+            <Component Id="cmp42CE3A6EF6B348E1A0066FE791CA86F5" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil1BA179443BBC179E6B467F516898758B" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\ReactiveUI.Blend.dll" />
+            </Component>
+            <Component Id="cmp88BC494ADA6873993029CD734529F2AF" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil533F6810EC912BDBEBB6CE41204CF355" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\ReactiveUI.Blend.xml" />
+            </Component>
+            <Component Id="cmp053E94052C6E2AFE43CE10FB4919589D" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil0867B9E96B99EF0EAF1B702A77B1D592" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\ReactiveUI.dll" />
+            </Component>
+            <Component Id="cmpFB17EB4AA3F2B82B754A68034E57170E" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil343F356185FCEABDBA4DBF2EECA6E848" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\ReactiveUI.Xaml.dll" />
+            </Component>
+            <Component Id="cmp476B09F82F4E58B948E41A35F0CF6681" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil3AA76BF47752A4C1CD054276223A813B" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\ReactiveUI.Xaml.xml" />
+            </Component>
+            <Component Id="cmp2288338663CA4DA92A8205DE8FDCE93A" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil34633B300A10F6E3D5BAF826183B87DE" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\ReactiveUI.xml" />
+            </Component>
+            <Component Id="cmp72F8516CE00064DEDB186CCFEFB65E19" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filB408081791BD14C0D2A4245EC258BB68" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Core.dll" />
+            </Component>
+            <Component Id="cmp88C0951C2A81FA5472A094532E9422B7" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filDAE485CFEB9F45FB52603B9534EC54C5" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Core.xml" />
+            </Component>
+            <Component Id="cmp5FDB2CE63EABB9DFD430EF6EF1C28507" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil76DF7BD1506B3FC9408B7D307B6BEC53" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Interfaces.dll" />
+            </Component>
+            <Component Id="cmpCDF0FAF6ECE95CEA19DC6AD61470FE12" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil55616D10DD04DAB772DE9AC1573F2BF7" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Interfaces.xml" />
+            </Component>
+            <Component Id="cmpF5EEBEC1A45FF3205825E090042F2725" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil439F32B21E4C7874AF016FB80CE05B92" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Linq.dll" />
+            </Component>
+            <Component Id="cmp5A89924093FC5A26B9E218AE2A93CA0B" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filAACC98034B8338E36048D3AFACA9A454" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Linq.xml" />
+            </Component>
+            <Component Id="cmpF2335136A55BD6B062B3A944B52373A5" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filF34FBEE5AE9FB7CC9BA27FA97EAE3A78" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.PlatformServices.dll" />
+            </Component>
+            <Component Id="cmp14758F0FEC54C48F958793757EF8ACBC" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil9B0518E388DFC27AC03FE7D045694487" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.PlatformServices.xml" />
+            </Component>
+            <Component Id="cmp18852D7372F10FB4BF1A7AFB2BF109B9" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil7262E572D58A48A2DC79CFABAE59F105" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Windows.Threading.dll" />
+            </Component>
+            <Component Id="cmp5B58A4050407F9ADD80118A527F9FA46" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil793C8F49FF88F49A9750938C54AD9772" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Reactive.Windows.Threading.xml" />
+            </Component>
+            <Component Id="cmpDFC9CE5A165C8F47E25E380916D1C826" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil77E7C88B516840F6BC538EB882FADB90" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\System.Windows.Interactivity.dll" />
+            </Component>
+            <Component Id="cmp0236B73544294B6CF7F3834263219D01" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil9B656124702E6EEF4FEA026129481746" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\Workoutz.exe" />
+            </Component>
+            <Component Id="cmp90DD46623BEFF4D2A21AB2AA2D51E742" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil401D20B4BA58E788BD5BB7DBA5E85A8F" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\Workoutz.exe.config" />
+            </Component>
+            <Component Id="cmpB71A76DFFDA255DE0FD7E166EC746E65" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil5E3092FA97D4729CC9F25E0CCC205C12" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\Workoutz.pdb" />
+            </Component>
+            <Component Id="cmp1140730526FDF77CE75117E07A9C8204" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filA7324DA488F2629FEBD9461454EDF01B" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\Workoutz.vshost.exe" />
+            </Component>
+            <Component Id="cmp71A8F7B39600E0093F2AF7AE2E401432" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="fil567D685C501DF80C1CC4CDFB7D98DEE9" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\Workoutz.vshost.exe.config" />
+            </Component>
+            <Component Id="cmp4242794E2E0351FF9D68FB6F14454790" Directory="dir2EBD87E8F30A518A1E2FCFF1C81DB9DA" Guid="*">
+                <File Id="filD8C16264947A934AAD863D950E83CCB3" KeyPath="yes" Source="$(var.Workoutz.TargetDir)\Workoutz.vshost.exe.manifest" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

@@ -1,0 +1,1 @@
+& $env:Wix\bin\heat.exe dir "..\Workoutz\bin\release" -template fragment -ag -out workoutz.wxs -configuration Release -nologo -scom -sreg -svb6 -cg Workoutz.Binaries -dr INSTALLFOLDER -directoryid INSTALLFOLDER -var var.Workoutz.TargetDir
